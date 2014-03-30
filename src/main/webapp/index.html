@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Stock Trading Portfolio</title>
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <link href="assets/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/common/portfolio.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="container">
+      <div id="heading" class="masthead">
+        <div class="pull-right">
+          <span class="text-info" data-bind="text: username"><em></em></span>&nbsp;
+          <button data-bind="click: logout" class="btn"><i class="icon-off"></i></button>
+        </div>
+        <h3 class="muted">Stock Trading Portfolio</h3>
+      </div>
+      <div id="main-content">
+        <p>There are two flavors of this app available: one built on stomp.js,
+        and the other built with cujoJS</p>
+        <ul>
+          <li>
+            <p>The traditional version uses script tags to load the application dependencies 
+            and <a href="http://jmesnil.net/stomp-websocket/doc/">stomp.js</a> as the messaging layer.</p>
+            <p><a href="traditional">Take me to the <strong>traditional</strong> version</a></p>
+          </li>
+          <li>
+            <p>The <a href="http://cujojs.com">cujoJS</a> version leverages AMD modules 
+            loaded with <a href="https://github.com/cujojs/curl">curl.js</a> and a 
+            message bus with <a href="https://github.com/cujojs/curl">msgs.js</a></p>
+            <p><a href="cujojs">Take me to the <strong>cujoJS</strong> version</a></p>
+          </li>
+        </ul>
+        <p>Both flavors of the application utilize <a href="http://knockoutjs.com/">Knockout.js</a>
+        for data binding and <a href="http://sockjs.org">SockJS</a> as a WebSocket polyfill.
+        <a href="http://stomp.github.io/">STOMP</a> is used as a higher level messaging protocol
+        on top of a raw WebSocket. <a href="http://getbootstrap.com/">Twitter Bootstrap</a> is
+        used for styling.</p>
+      </div>
+    </div>
+
+  </body>
+</html>

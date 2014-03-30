@@ -36,14 +36,14 @@ public class QuoteService implements
 
 	private final MessageSendingOperations<String> messagingTemplate;
 
-	private final StockQuoteGenerator quoteGenerator;
+	private final StockQuoteGeneratorService quoteGenerator;
 
 	private AtomicBoolean brokerAvailable = new AtomicBoolean();
 
 	@Autowired
 	public QuoteService(MessageSendingOperations<String> messagingTemplate) {
 		this.messagingTemplate = messagingTemplate;
-		quoteGenerator = new StockQuoteGenerator();
+		quoteGenerator = new StockQuoteGeneratorService();
 		
 	}
 
@@ -86,7 +86,7 @@ public class QuoteService implements
 		return false;
 	}
 
-	public StockQuoteGenerator getStockQuoteGenerator() {
+	public StockQuoteGeneratorService getStockQuoteGenerator() {
 		return this.quoteGenerator;
 	}
 

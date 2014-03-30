@@ -16,11 +16,11 @@ class HttpGetFeedService implements Runnable {
 	private static String GET_METHOD = "GET";
 	private static String FEED_PRICE_KEYWORD = "<span class=\"Price ";
 	
-	private StockQuoteGenerator stockQuoteGenerator;
+	private StockQuoteGeneratorService stockQuoteGenerator;
 
 	private String ticker;	
 
-	public HttpGetFeedService(StockQuoteGenerator stockQuoteGenerator, String ticker) {
+	public HttpGetFeedService(StockQuoteGeneratorService stockQuoteGenerator, String ticker) {
 		this.stockQuoteGenerator = stockQuoteGenerator;
 		this.ticker = ticker;
 	}

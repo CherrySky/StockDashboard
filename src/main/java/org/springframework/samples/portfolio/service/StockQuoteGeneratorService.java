@@ -10,9 +10,9 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.samples.bo.Quote;
 
-public class StockQuoteGenerator {
+public class StockQuoteGeneratorService {
 
-	private static Log LOG = LogFactory.getLog(StockQuoteGenerator.class);
+	private static Log LOG = LogFactory.getLog(StockQuoteGeneratorService.class);
 	private static String START_PATTEN = "Price";
 	private static String END_PATTEN = "&nbsp;";
 
@@ -20,7 +20,7 @@ public class StockQuoteGenerator {
 
 	private Map<String, Quote> quotesMap = new ConcurrentHashMap<>();
 
-	public StockQuoteGenerator() {
+	public StockQuoteGeneratorService() {
 		quotesMap.put("5", new Quote());
 		quotesMap.put("941", new Quote());
 		quotesMap.put("2883", new Quote());

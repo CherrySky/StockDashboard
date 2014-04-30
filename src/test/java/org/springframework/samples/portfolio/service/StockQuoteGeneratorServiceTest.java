@@ -9,25 +9,6 @@ import static org.junit.Assert.*;
 
 public class StockQuoteGeneratorServiceTest {
 
-	StockQuoteGeneratorService stockQuoteGeneratorService;
-
-	@Before
-	public void setup() throws Exception {
-		MockitoAnnotations.initMocks(this);
-		stockQuoteGeneratorService = new StockQuoteGeneratorService();
-	}
-
-	@Test
-	public void testParseStockCurrentPriceWhenInvalidFeedContent() {
-		// Given
-		String feedContent = "abc";
-
-		// When
-		String stockPrice = stockQuoteGeneratorService
-				.parseStockCurrentPrice(feedContent);
-
-		// Then
-		assertEquals("", stockPrice);
-	}
+	
 
 }

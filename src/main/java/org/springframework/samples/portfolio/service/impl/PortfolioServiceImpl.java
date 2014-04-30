@@ -21,17 +21,17 @@ import java.util.Map;
 
 import org.springframework.samples.bo.PortfolioPosition;
 import org.springframework.samples.portfolio.Portfolio;
-import org.springframework.samples.portfolio.service.PortfolioService;
+import org.springframework.samples.portfolio.service.IPortfolioService;
 import org.springframework.stereotype.Service;
 
 /**
  * @author Rob Winch
  */
 @Service
-public class PortfolioServiceImpl implements PortfolioService {
+public class PortfolioServiceImpl implements IPortfolioService {
 
 	// user -> Portfolio
-	private final Map<String, Portfolio> portfolioLookup = new HashMap<>();
+	private final Map<String, Portfolio> portfolioLookup = new HashMap<String, Portfolio>();
 
 
 	public PortfolioServiceImpl() {

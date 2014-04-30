@@ -30,9 +30,9 @@ import org.springframework.samples.bo.Stock;
 import org.springframework.samples.bo.Trade;
 import org.springframework.samples.bo.TradeAction;
 import org.springframework.samples.portfolio.Portfolio;
-import org.springframework.samples.portfolio.service.PortfolioService;
+import org.springframework.samples.portfolio.service.IPortfolioService;
 import org.springframework.samples.portfolio.service.QuoteService;
-import org.springframework.samples.portfolio.service.TradeService;
+import org.springframework.samples.portfolio.service.ITradeService;
 import org.springframework.stereotype.Controller;
 
 
@@ -41,14 +41,14 @@ public class PortfolioController {
 
 	private static final Log logger = LogFactory.getLog(PortfolioController.class);
 
-	private final PortfolioService portfolioService;
+	private final IPortfolioService portfolioService;
 
-	private final TradeService tradeService;
+	private final ITradeService tradeService;
 
 	private final QuoteService quoteService;
 
 	@Autowired
-	public PortfolioController(PortfolioService portfolioService, TradeService tradeService, QuoteService quoteService) {
+	public PortfolioController(IPortfolioService portfolioService, ITradeService tradeService, QuoteService quoteService) {
 		this.portfolioService = portfolioService;
 		this.tradeService = tradeService;
 		this.quoteService = quoteService;

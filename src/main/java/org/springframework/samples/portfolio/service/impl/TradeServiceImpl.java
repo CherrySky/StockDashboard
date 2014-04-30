@@ -24,8 +24,8 @@ import org.springframework.samples.bo.Trade;
 import org.springframework.samples.bo.TradeAction;
 import org.springframework.samples.bo.TradeResult;
 import org.springframework.samples.portfolio.Portfolio;
-import org.springframework.samples.portfolio.service.PortfolioService;
-import org.springframework.samples.portfolio.service.TradeService;
+import org.springframework.samples.portfolio.service.IPortfolioService;
+import org.springframework.samples.portfolio.service.ITradeService;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -34,19 +34,19 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 
 @Service
-public class TradeServiceImpl implements TradeService {
+public class TradeServiceImpl implements ITradeService {
 
 	private static final Log logger = LogFactory.getLog(TradeServiceImpl.class);
 
 	private final SimpMessageSendingOperations messagingTemplate;
 
-	private final PortfolioService portfolioService;
+	private final IPortfolioService portfolioService;
 
-	private final List<TradeResult> tradeResults = new CopyOnWriteArrayList<>();
+	private final List<TradeResult> tradeResults = new CopyOnWriteArrayList<TradeResult>();
 
 
 	@Autowired
-	public TradeServiceImpl(SimpMessageSendingOperations messagingTemplate, PortfolioService portfolioService) {
+	public TradeServiceImpl(SimpMessageSendingOperations messagingTemplate, IPortfolioService portfolioService) {
 		this.messagingTemplate = messagingTemplate;
 		this.portfolioService = portfolioService;
 	}

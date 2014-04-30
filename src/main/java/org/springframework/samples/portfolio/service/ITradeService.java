@@ -15,11 +15,11 @@
  */
 package org.springframework.samples.portfolio.service;
 
-import org.springframework.samples.portfolio.Portfolio;
+import org.springframework.samples.bo.Trade;
 
 
-public interface PortfolioService {
+public interface ITradeService {
 
-	Portfolio findPortfolio(String username);
+	void executeTrade(Trade trade);
 
 }
